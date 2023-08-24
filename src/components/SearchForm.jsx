@@ -1,13 +1,13 @@
 import { useState } from "react";
 
-const SearchForm = ()=> {
+const SearchForm = ({search, setSearch})=> {
     const [status, setStatus] = useState('');
     const [originalLaunch, setOriginalLaunch] = useState('');
     const [type, setType] = useState('');
 
     const handleSubmit = (event)=> {
         event.preventDefault();
-        console.log('status', status)
+        setSearch({status, originalLaunch, type})
     }
 
     return (
@@ -20,9 +20,10 @@ const SearchForm = ()=> {
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                 >
-                    <option value="status1">Status 1</option>
-                    <option value="status2">Status 2</option>
-                    <option value="status3">Status 3</option>
+                    <option value="active">Active</option>
+                    <option value="unknown">Unknown</option>
+                    <option value="retired">Retired</option>
+                    <option value="destroyed">Destroyed</option>
                 </select>
 
                 <label htmlFor="original-launch" className="block mt-4 mb-[5px] font-semibold text-gray-700">Original Launch:</label>
