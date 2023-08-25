@@ -33,6 +33,7 @@ const DataGrid = ({capsules, handleClickedItem, search})=> {
                         <div key={index} onClick={()=> handleClickedItem(item)} className="p-4 border rounded shadow cursor-pointer hover:bg-gray-100 ">
                             <h3 className="text-lg font-semibold">{item.capsule_id}</h3>
                             <p>Status: {item.status}</p>
+                            <p>Type: {item.type}</p>
                             <p>Original Launch: {item.original_launch}</p>
                         </div>
                     )
