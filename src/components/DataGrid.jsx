@@ -2,7 +2,6 @@ import Pagination from "./Pagination";
 import { useState } from "react";
 
 const DataGrid = ({capsules, handleClickedItem, search})=> {
-    console.log(capsules)
     const itemsPerPage = 6;
     const [currentPage, setCurrentPage] = useState(1);
 

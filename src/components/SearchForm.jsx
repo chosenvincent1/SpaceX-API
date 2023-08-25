@@ -4,7 +4,6 @@ const SearchForm = ({search, setSearch})=> {
     const [status, setStatus] = useState('');
     const [originalLaunch, setOriginalLaunch] = useState('');
     const [type, setType] = useState('');
-    const [emptyType, setEmptyType] = useState(false);
 
     const handleSubmit = (event)=> {
         event.preventDefault();
