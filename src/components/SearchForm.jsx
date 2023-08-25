@@ -25,6 +25,7 @@ const SearchForm = ({search, setSearch})=> {
                     value={status}
                     onChange={(e) => setStatus(e.target.value)}
                 >
+                    <option value="">--Select--</option>
                     <option value="active">Active</option>
                     <option value="unknown">Unknown</option>
                     <option value="retired">Retired</option>

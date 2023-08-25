@@ -5,6 +5,7 @@ import DataGrid from './components/DataGrid';
 import PopUp from './components/PopUp';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { MoonLoader } from "react-spinners";
 
 function App() {
   const [capsules, setCapsules] = useState(null);
@@ -25,7 +26,9 @@ function App() {
   }, [])
 
   if(isLoading){
-    return <div>Loading...</div>
+    return <div className="py-[50px] flex justify-center ">
+                <MoonLoader color="#000" loading={true} size={50} />
+            </div>
   }
 
   return (
