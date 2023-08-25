@@ -32,12 +32,12 @@ function App() {
   }
 
   return (
-    <div>
+    <>
       {selectedItem && <PopUp selectedItem={selectedItem} onClose={()=> setSelectedItem(null)} />}
       <Banner />
       <SearchForm search={search} setSearch={setSearch} />
       <DataGrid capsules={capsules} handleClickedItem={setSelectedItem} search={search} />
-    </div>
+    </>
   )
 }
 
