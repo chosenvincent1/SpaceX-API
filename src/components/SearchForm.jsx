@@ -4,10 +4,15 @@ const SearchForm = ({search, setSearch})=> {
     const [status, setStatus] = useState('');
     const [originalLaunch, setOriginalLaunch] = useState('');
     const [type, setType] = useState('');
+    const [emptyType, setEmptyType] = useState(false);
 
     const handleSubmit = (event)=> {
         event.preventDefault();
-        setSearch({status, originalLaunch, type})
+        setSearch({status, originalLaunch, type});
+
+        setStatus('');
+        setOriginalLaunch('');
+        setType('');
     }
 
     return (
@@ -38,7 +43,7 @@ const SearchForm = ({search, setSearch})=> {
                 <label htmlFor="type" className="block mt-4 mb-[5px] font-semibold text-gray-700">Type:</label>
                 <input
                     id="type"
-                    className="w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-[2px] focus:border-[#007bff]"
+                    className={`w-full px-3 py-2 border rounded shadow-sm focus:outline-none focus:border-[2px] focus:border-[#007bff]`}
                     type="text"
                     value={type}
                     onChange={(e) => setType(e.target.value)}

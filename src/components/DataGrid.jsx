@@ -1,7 +1,7 @@
 import Pagination from "./Pagination";
 import { useState } from "react";
 
-const DataGrid = ({capsules, handleClickedItem})=> {
+const DataGrid = ({capsules, handleClickedItem, search})=> {
     console.log(capsules)
     const itemsPerPage = 6;
     const [currentPage, setCurrentPage] = useState(1);
@@ -9,7 +9,21 @@ const DataGrid = ({capsules, handleClickedItem})=> {
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
 
-    const displayedData = capsules.slice(startIndex, endIndex);
+    const filteredCapsules = capsules.filter(item => {
+        if (search.status && item.status !== search.status) {
+          return false;
+        }
+        if (search.originalLaunch && item.original_launch !== search.originalLaunch) {
+          return false;
+        }
+        if (search.type && item.type !== search.type) {
+          return false;
+        }
+        return true;
+      });
+
+    const displayedData = filteredCapsules.slice(startIndex, endIndex);
+
 
     return (
         <>
