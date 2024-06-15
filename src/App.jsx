@@ -11,7 +11,11 @@ function App() {
   const [capsules, setCapsules] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
-  const [search, setSearch] = useState({status: '', originalLaunch: '', type: ''})
+  const [search, setSearch] = useState({
+    status: '', 
+    originalLaunch: '', 
+    type: ''
+  })
 
   useEffect(()=>{
     const fetchCapsules = async ()=> {
